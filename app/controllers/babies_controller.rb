@@ -52,15 +52,10 @@ class BabiesController < ApplicationController
   # DELETE /babies/1.json
   def destroy
     @baby.destroy
-    respond_to do |format|
-      format.html { redirect_to babies_url, notice: 'Baby was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to root_path
+
   end
 
-  def today
-    @baby = Baby.find(params[:id])
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

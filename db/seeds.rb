@@ -1,4 +1,5 @@
 Baby.where(name: 'Kiran').first_or_create
+Baby.where(name: 'Kiran').first_or_create
 Baby.where(name: 'Abdul').first_or_create
 Baby.where(name: 'Raj').first_or_create
 Baby.where(name: 'Apu').first_or_create
