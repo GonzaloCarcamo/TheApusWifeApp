@@ -3,6 +3,7 @@ class CreateBabies < ActiveRecord::Migration[5.2]
     create_table :babies do |t|
       t.string :name
 
+
       t.timestamps
     end
   end
