@@ -25,7 +25,7 @@ class BabiesController < ApplicationController
   # POST /babies
   # POST /babies.json
   def create
-    @baby = Breast.new(baby_params)
+    @baby = Baby.new(baby_params)
 
       if @baby.save
         redirect_to root_path
