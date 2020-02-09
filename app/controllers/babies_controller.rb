@@ -25,18 +25,14 @@ class BabiesController < ApplicationController
   # POST /babies
   # POST /babies.json
   def create
-    @baby = Baby.new(baby_params)
+    @baby = Breast.new(baby_params)
 
-    respond_to do |format|
       if @baby.save
-        format.html { redirect_to @baby, notice: 'Baby was successfully created.' }
-        format.json { render :show, status: :created, location: @baby }
+        redirect_to root_path
       else
-        format.html { render :new }
-        format.json { render json: @baby.errors, status: :unprocessable_entity }
+        redirect_to new_baby_path
       end
     end
-  end
 
   # PATCH/PUT /babies/1
   # PATCH/PUT /babies/1.json
