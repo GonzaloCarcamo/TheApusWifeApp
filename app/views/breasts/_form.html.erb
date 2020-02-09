@@ -1,0 +1,36 @@
+<%= form_with(model: breast, local: true) do |form| %>
+  <% if breast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(breast.errors.count, "error") %> prohibited this breast from being saved:</h2>
+
+      <ul>
+      <% breast.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :baby_id_id %>
+    <%= form.text_field :baby_id, class: "form-control" %>
+    <p> id:1 => Kiran ; id:2 => Abdul ; id:3 => Raj ; id:4 => Apu ; id:5 => Brahma, id:6 => Nevdar ;
+        id:7 => Hari ; id:8 => Ravindranat</p>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :quantify %>
+    <%= form.number_field :quantify, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :duration %>
+    <%= form.number_field :duration, class: "form-control" %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

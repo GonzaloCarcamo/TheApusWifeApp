@@ -1,0 +1,37 @@
+<h2>Son details</h2>
+
+<p id="notice"><%= notice %></p>
+
+<p><strong>Name:</strong> <%= @baby.name %> <br></p>
+
+
+<table border = '1'>
+  <thead>
+    <tr>
+      <th>Times today</th>
+      <th>Last date</th>
+      <th>Quantify today</th>
+      <th>Duration today</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td> <%= @baby.breasts.where("created_at >= ?", Time.zone.now.beginning_of_day).count%></td>
+
+        <td> <%= @baby.breasts.last.created_at %>  </td>
+
+        <td> <%= @baby.breasts.where("created_at >= ?", Time.zone.now.beginning_of_day).sum(:quantify)%></td>
+
+        <td> <%= @baby.breasts.where("created_at >= ?", Time.zone.now.beginning_of_day).sum(:duration)%></td>
+
+
+      </tr>
+  </tbody>
+
+</table>
+
+<br>
+
+
+<%= link_to 'Back to main', babies_path %>
